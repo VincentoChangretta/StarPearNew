@@ -9,13 +9,20 @@ import { IdModalForm } from 'shared/const/id';
 import { Courses, faqs, lessons } from './data/data';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { Modal } from '../Modal/Modal';
 
 export const PhilosophyCourse: FC = () => {
    const [program, setProgram] = useState<boolean>(false);
    const [activeCourse, setActiveCourse] = useState<string>('');
+   const [modal, setModal] = useState<boolean>(false);
 
    const handleSetActiveCourse = useCallback((course: string) => {
       setActiveCourse(course);
+      setModal(true);
+   }, []);
+
+   const handleCloseModal = useCallback(() => {
+      setModal(false);
    }, []);
 
    const programBtn =
@@ -148,18 +155,22 @@ export const PhilosophyCourse: FC = () => {
             </div>
          </div>
 
-         <section id={IdModalForm} className='mt-16 mb-0'>
-            <Title>Записаться на занятия</Title>
-            <Form className='mb-10' activeCourse={activeCourse} />
-            <p className='text-center text-sm'>
-               Для связи и записи <br /> напрямую —{' '}
-               <span className='font-bold'>
-                  <a href={LinktelegramInline} target='_blank'>
-                     @Starpear1723
-                  </a>
-               </span>
-            </p>
-         </section>
+         {modal && (
+            <Modal full onClose={handleCloseModal}>
+               <section id={IdModalForm} className='mt-16 mb-0'>
+                  <Title>Записаться на занятия</Title>
+                  <Form className='mb-10' activeCourse={activeCourse} />
+                  <p className='text-center text-sm'>
+                     Для связи и записи <br /> напрямую —{' '}
+                     <span className='font-bold'>
+                        <a href={LinktelegramInline} target='_blank'>
+                           @Starpear1723
+                        </a>
+                     </span>
+                  </p>
+               </section>
+            </Modal>
+         )}
       </section>
    );
 };

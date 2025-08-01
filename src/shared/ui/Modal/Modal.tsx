@@ -7,10 +7,11 @@ interface ModalProps {
    children: ReactNode;
    className?: string;
    onClose?: () => void;
+   full?: boolean;
 }
 
 export const Modal = (props: ModalProps) => {
-   const { className, children, onClose } = props;
+   const { className, children, onClose, full } = props;
 
    const handleClose = () => {
       if (onClose) {
@@ -34,7 +35,9 @@ export const Modal = (props: ModalProps) => {
          >
             <div
                onClick={e => e.stopPropagation()}
-               className={`relative flex flex-col justify-center max-w-[1050px] max-h-[80%] w-full backdrop-blur-3xl min-h-[200px] rounded-[25px] ring-2 ring-white/10 overflow-hidden `}
+               className={`relative flex flex-col justify-center max-w-[1050px] max-h-[80%] w-full backdrop-blur-3xl min-h-[200px] rounded-[25px] ring-2 ring-white/10 overflow-hidden ${
+                  full && 'h-full'
+               }`}
             >
                <button
                   className={`flex justify-center items-center absolute z-50 right-[20px] top-[20px] w-10 h-10 rounded-full bg-main cursor-pointer transition duration-500 hover:rotate-180 max-500:w-7 max-500:h-7 max-500:top-[15px] max-500:right-[15px]`}

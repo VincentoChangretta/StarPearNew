@@ -1,6 +1,7 @@
 import { Links } from 'shared/components/Links/Links';
 import { Logo } from 'shared/components/Logo/Logo';
 import { Navigation } from 'shared/components/Navigation/Navigation';
+import { VcDevs } from 'shared/components/VcDevs/VcDevs';
 
 export const Footer = () => {
    return (
@@ -10,6 +11,7 @@ export const Footer = () => {
                <Navigation />
                <Links />
                <Logo />
+               <VcDevs />
             </div>
          </div>
       </footer>
