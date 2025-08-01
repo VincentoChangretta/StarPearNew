@@ -1,0 +1,10 @@
+export const logoImg = '/img/logow.svg';
+export const MatveyMainImg = '/img/MatveyMain.webp';
+export const SocratesDeathImg = '/img/SocratesDeath.webp';
+export const videoPoster = '/img/video_template.webp';
+export const SchoolImg = '/img/School.webp';
+export const withBookImg = '/img/PlatoBook.webp';
+export const withCandleImg = '/img/PlatoCandle.webp';
+export const lectionsImg = '/img/lections1.webp';
+export const glareImg = '/img/glare.webp';
+export const individualImg = '/img/individual.webp';

@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@font-face {
+    font-family: "Bebas";
+    src: url("/fonts/BebasNeueCyrillic.woff2") format("woff2"),
+        url("/fonts/BebasNeueCyrillic.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+html {
+    scroll-padding-top: 100px;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+html::-webkit-scrollbar-track {
+    background-color: var(--color-mainBg);
+
+}
+
+*,
+*::before,
+*::after {
+    scroll-padding-top: inherit;
+    scroll-behavior: inherit;
+}
+
+
+
+
+@theme {
+    --color-mainBg: #2B231D;
+    --color-mainBg-inv: #fff;
+    --color-mainBg-second: #8E7565;
+    --color-mainBg-second-light: #DBB591;
+
+    --radius-stdRadius: 30px;
+
+    --height-header: 105px;
+    --height-minusHeader: calc(100svh - var(--height-header));
+
+    --font-Bebas: "Bebas", sans-serif;
+    --font-Montserrat: "Montserrat", sans-serif;
+
+
+    --animate-animateBox: animateBox 30s linear infinite;
+    --animate-animateContent: animateContent 30s linear infinite;
+    --animate-showMessage: showMessage .8s ease forwards;
+    --animate-showMessageLater: showMessage .8s 1s ease forwards, toScale 2s 1s ease infinite;
+    --animate-toScale: glareAnim 5s ease infinite, animateContent 10s ease infinite;
+    --animate-animateBlocks: animateBlocks 1.5s ease forwards;
+
+    --gcov-marker: "— ";
+
+
+    --breakpoint-1450: 1450px;
+    --breakpoint-1400: 1400px;
+    --breakpoint-1350: 1350px;
+    --breakpoint-1300: 1300px;
+    --breakpoint-1250: 1250px;
+    --breakpoint-1220: 1220px;
+    --breakpoint-1200: 1200px;
+    --breakpoint-1175: 1175px;
+    --breakpoint-1150: 1150px;
+    --breakpoint-1100: 1100px;
+    --breakpoint-1050: 1050px;
+    --breakpoint-1000: 1000px;
+    --breakpoint-950: 950px;
+    --breakpoint-900: 900px;
+    --breakpoint-860: 860px;
+    --breakpoint-810: 810px;
+    --breakpoint-750: 750px;
+    --breakpoint-700: 700px;
+    --breakpoint-650: 650px;
+    --breakpoint-635: 635px;
+    --breakpoint-600: 600px;
+    --breakpoint-530: 530px;
+    --breakpoint-500: 500px;
+    --breakpoint-475: 475px;
+    --breakpoint-460: 460px;
+    --breakpoint-435: 435px;
+    --breakpoint-425: 425px;
+    --breakpoint-405: 405px;
+    --breakpoint-400: 400px;
+    --breakpoint-380: 380px;
+    --breakpoint-340: 340px;
+
+
+    @keyframes animateBox {
+        0% {
+            rotate: 0deg;
+        }
+
+        100% {
+            rotate: 360deg;
+        }
+    }
+
+    @keyframes animateContent {
+        0% {
+            rotate: 0deg;
+        }
+
+        100% {
+            rotate: -360deg;
+        }
+    }
+
+    @keyframes showMessage {
+        0% {
+            opacity: 0;
+            scale: 0
+        }
+
+        100% {
+            opacity: 1;
+            scale: 1
+        }
+    }
+
+    @keyframes toScale {
+        50% {
+            scale: 1.05
+        }
+
+        100% {
+            scale: 1
+        }
+    }
+
+    @keyframes glareAnim {
+        0% {
+            scale: 0.8;
+        }
+
+        50% {
+            scale: 1.2;
+        }
+
+        100% {
+            scale: 0.8
+        }
+    }
+
+    @keyframes animateBlocks {
+        0% {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        100% {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+
+}
+
+
+@layer components {
+    section {
+        @apply mb-[70px] max-1000:mb-[50px]
+    }
+
+    .app {
+        @apply min-h-svh overflow-hidden flex flex-col bg-mainBg text-mainBg-inv font-Montserrat text-lg max-1000:text-base max-435:text-sm
+    }
+
+    .main {
+        @apply grow
+    }
+
+    .std-container {
+        @apply max-w-[1320px] px-[10px] mx-auto max-810:max-w-[520px];
+    }
+
+    .list-with-gcovMarker {
+        @apply list-(--gcov-marker) pl-[30px]
+    }
+
+
+    /* scroll */
+
+
+
+}

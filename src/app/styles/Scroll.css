@@ -1,0 +1,13 @@
+.scrollbar-thin-custom::-webkit-scrollbar {
+    width: 10px;
+}
+
+.scrollbar-thin-custom::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.scrollbar-thin-custom::-webkit-scrollbar-track {
+    background-color: transparent;
+
+}
